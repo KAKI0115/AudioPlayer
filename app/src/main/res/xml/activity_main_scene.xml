@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+       <KeyFrameSet>
+           <KeyTrigger />
+       </KeyFrameSet>
+        <OnClick motion:clickAction="transitionToEnd" />
+        <OnClick motion:targetId="@+id/image_artwork" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/image_artwork"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:rotationX="45"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="40dp"
+            motion:layout_constraintVertical_bias="1.0"
+            android:layout_marginEnd="24dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintDimensionRatio="1:1"
+            android:layout_marginTop="24dp" />
+        <Constraint
+            motion:layout_constraintEnd_toStartOf="@+id/image_artwork"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="80dp"
+            motion:layout_constraintBottom_toTopOf="@+id/text_song_artist"
+            android:layout_marginStart="24dp"
+            motion:layout_constraintHorizontal_bias="0.0"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/text_song_title" />
+    </ConstraintSet>
+</MotionScene>
